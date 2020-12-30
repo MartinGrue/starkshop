@@ -11,13 +11,13 @@ const styles = createStyles({
     display: "flex",
   },
   item: {
-    display: "flex",
-    alignItems: "center",
-    border: "none",
-    background: "transparent",
-    cursor: "pointer",
-    padding: "0px",
-    fill: "currentColor",
+    // display: "flex",
+    // alignItems: "center",
+    // border: "none",
+    // background: "transparent",
+    // cursor: "pointer",
+    // padding: "0px",
+    // fill: "currentColor",
     "& a": {
       textDecoration: "none", //should be global
     },

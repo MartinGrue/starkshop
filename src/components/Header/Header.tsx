@@ -22,6 +22,12 @@ const styles = createStyles({
   navPanel: {
     height: "53px",
   },
+  logo: {
+    display:"flex",
+    justifyContent:"center",
+    marginRight: "30px",
+    width: "255px",
+  },
 });
 interface Props extends WithStyles<typeof styles> {}
 
@@ -30,7 +36,9 @@ const Header: React.FC<Props> = ({ classes }) => {
     <Fragment>
       <Topbar></Topbar>
       <div className={classes.middleSection}>
-        <Logo></Logo>
+        <div className={classes.logo}>
+          <Logo></Logo>
+        </div>
         <Search></Search>
       </div>
       <div className={classes.navPanel}>
