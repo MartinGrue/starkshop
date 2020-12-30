@@ -9,7 +9,7 @@ const styles = createStyles({
   navPanel__root: {
     height: "100%",
     color: "black",
-    background: "#f2f2f2",
+    background: "#d2d2d2",
   },
   navPanel__container: {
     maxWidth: "1140px",
@@ -32,7 +32,6 @@ const styles = createStyles({
     marginLeft: "18px",
   },
   navPanel__indicators: {
-    height: "100%",
     marginLeft: "auto",
   },
 });
