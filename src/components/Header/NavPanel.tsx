@@ -3,6 +3,7 @@ import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import Categories from "./Categories";
 import NavLinks from "./NavLinks";
+import NavIndicators from "./NavIndicators";
 
 const styles = createStyles({
   navPanel__root: {
@@ -30,8 +31,10 @@ const styles = createStyles({
   navPanel__links: {
     marginLeft: "18px",
   },
-  navPanel__indicatorContainer: {},
-  navPanel__indicatorItem: {},
+  navPanel__indicators: {
+    height: "100%",
+    marginLeft: "auto",
+  },
 });
 
 interface Props extends WithStyles<typeof styles> {}
@@ -47,7 +50,9 @@ const NavPanel: React.FC<Props> = ({ classes }) => {
           <div className={classes.navPanel__links}>
             <NavLinks></NavLinks>
           </div>
-          <div className={classes.navPanel__indicatorContainer}></div>
+          <div className={classes.navPanel__indicators}>
+            <NavIndicators></NavIndicators>
+          </div>
         </div>
       </div>
     </div>
