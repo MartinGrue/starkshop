@@ -2,12 +2,13 @@ import React from "react";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import Categories from "./Categories";
+import NavLinks from "./NavLinks";
 
 const styles = createStyles({
   navPanel__root: {
     height: "100%",
     color: "black",
-    background: "#f7f7f7",
+    background: "#f2f2f2",
   },
   navPanel__container: {
     maxWidth: "1140px",
@@ -26,7 +27,9 @@ const styles = createStyles({
     height: "100%",
   },
   navPanel__categories: { flexShrink: 0 },
-  navPanel__links: {},
+  navPanel__links: {
+    marginLeft: "18px",
+  },
   navPanel__indicatorContainer: {},
   navPanel__indicatorItem: {},
 });
@@ -41,7 +44,9 @@ const NavPanel: React.FC<Props> = ({ classes }) => {
           <div className={classes.navPanel__categories}>
             <Categories></Categories>
           </div>
-          <div className={classes.navPanel__links}></div>
+          <div className={classes.navPanel__links}>
+            <NavLinks></NavLinks>
+          </div>
           <div className={classes.navPanel__indicatorContainer}></div>
         </div>
       </div>
