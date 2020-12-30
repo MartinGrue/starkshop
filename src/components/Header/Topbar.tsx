@@ -44,6 +44,17 @@ const styles = createStyles({
     "&:not(:first-child)": {
       marginLeft: "16px",
     },
+    "& a": {
+      color: "inherit",
+      transition: "color 0.3s",
+
+      textDecoration: "none", //this should be global
+      backgroundColor: "transparent", //this should be global
+    },
+    "&:hover": {
+      textDecoration: "none", //this should be global
+      color: "#1a66ff", //this should be global
+    },
   },
   topbarPadding: {
     flexGrow: 1,
@@ -67,7 +78,7 @@ const styles = createStyles({
     },
     "& svg": {
       position: "absolute",
-      right: 7,
+      right: "7px",
       top: "calc(50% - 4px)",
     },
   },
@@ -160,7 +171,7 @@ const Topbar: React.FC<TopBarProps> = ({ classes }) => {
                     setdropdownOpen(!dropdownOpen);
                   }}
                 >
-                  MyAccount
+                  My Account
                   <Icon
                     icons={Icons}
                     id="arrow-rounded-down-7x5"
