@@ -2,8 +2,8 @@ import React from "react";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 
-import Icons from "../../assets/images/sprite.svg";
-import { Icon } from "../../helpers/getSprite";
+import Icons from "../../../assets/images/sprite.svg"
+import { Icon } from "../../../helpers/getSprite";
 
 interface Props extends WithStyles<typeof styles> {}
 const styles = createStyles({

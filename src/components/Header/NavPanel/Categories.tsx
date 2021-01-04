@@ -1,11 +1,10 @@
 import React from "react";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
-import classes from "*.module.css";
-import categoryItems from "../../constants/categoryItems";
-import Icons from "../../assets/images/sprite.svg";
-import { Icon } from "../../helpers/getSprite";
-
+import categoryItems from "../../../constants/categoryItems";
+import Icons from "../../../assets/images/sprite.svg"
+import { Icon } from "../../../helpers/getSprite";
+import MegaMenu from "./MegaMenu";
 const styles = createStyles({
   categories__Root: {
     width: "255px",
@@ -94,13 +93,13 @@ const Categories: React.FC<Props> = ({ classes }) => {
                   <a href="/">
                     {Item.name}
                     <Icon
-                    
                       icons={Icons}
                       id="arrow-rounded-right-6x9"
                       width="6px"
                       height="9px"
                     ></Icon>
                   </a>
+                  <MegaMenu></MegaMenu>
                 </li>
               );
             })}

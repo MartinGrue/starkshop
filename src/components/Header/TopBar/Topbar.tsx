@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { withStyles, createStyles } from "@material-ui/styles";
 import { WithStyles } from "@material-ui/core";
-import Icons from "../../assets/images/sprite.svg";
-import { Icon } from "../../helpers/getSprite";
+import Icons from "../../../assets/images/sprite.svg"
+import { Icon } from "../../../helpers/getSprite";
 
 const styles = createStyles({
   root: {

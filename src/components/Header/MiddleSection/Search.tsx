@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { withStyles, createStyles } from "@material-ui/styles";
 import { WithStyles } from "@material-ui/core";
 import classes from "*.module.css";
-import { Icon } from "../../helpers/getSprite";
-import Icons from "../../assets/images/sprite.svg";
+import { Icon } from "../../../helpers/getSprite";
+import Icons from "../../../assets/images/sprite.svg"
 
 const styles = createStyles({
   root: { flexGrow: 1 },

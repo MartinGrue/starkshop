@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import Topbar from "./Topbar";
-import Search from "./Search";
-import Logo from "./Logo";
+import Topbar from "./TopBar/Topbar";
+import Search from "./MiddleSection/Search";
+import Logo from "./MiddleSection/Logo";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
-import NavPanel from "./NavPanel";
+import NavPanel from "./NavPanel/NavPanel";
 
 const styles = createStyles({
   middleSection: {

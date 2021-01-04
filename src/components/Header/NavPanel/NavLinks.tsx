@@ -2,9 +2,9 @@ import React from "react";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import Categories from "./Categories";
-import NavLinkItems from "../../constants/navLinkItems";
-import Icons from "../../assets/images/sprite.svg";
-import { Icon } from "../../helpers/getSprite";
+import NavLinkItems from "../../../constants/navLinkItems";
+import Icons from "../../../assets/images/sprite.svg"
+import { Icon } from "../../../helpers/getSprite";
 const styles = createStyles({
   navLinks__list: { display: "flex", listStyle: "none", padding: 0, margin: 0 },
   navLinks__item: {
