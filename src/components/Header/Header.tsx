@@ -5,6 +5,7 @@ import Logo from "./MiddleSection/Logo";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import NavPanel from "./NavPanel/NavPanel";
+import MiddleSection from "./MiddleSection/MiddleSection";
 
 const styles = createStyles({
   middleSection: {
@@ -23,8 +24,8 @@ const styles = createStyles({
     height: "53px",
   },
   logo: {
-    display:"flex",
-    justifyContent:"center",
+    display: "flex",
+    justifyContent: "center",
     marginRight: "30px",
     width: "255px",
   },
@@ -35,12 +36,13 @@ const Header: React.FC<Props> = ({ classes }) => {
   return (
     <Fragment>
       <Topbar></Topbar>
-      <div className={classes.middleSection}>
+      {/* <div className={classes.middleSection}>
         <div className={classes.logo}>
           <Logo></Logo>
         </div>
         <Search></Search>
-      </div>
+      </div> */}
+      <MiddleSection></MiddleSection>
       <div className={classes.navPanel}>
         <NavPanel></NavPanel>
       </div>

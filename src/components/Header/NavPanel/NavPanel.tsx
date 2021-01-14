@@ -4,34 +4,18 @@ import createStyles from "@material-ui/core/styles/createStyles";
 import Categories from "./Categories";
 import NavLinks from "./NavLinks";
 import NavIndicators from "./NavIndicators";
+import { Container, Grid } from "@material-ui/core";
 
 const styles = createStyles({
-  navPanel__root: {
-    height: "100%",
+  root: {
     color: "black",
     background: "#d2d2d2",
   },
-  navPanel__container: {
-    maxWidth: "1140px",
-    height: "100%",
-
-    width: "100%", //global
-    paddingRight: "15px",
-    paddingLeft: "15px",
-    marginRight: "auto",
-    marginLeft: "auto",
-  },
-  navPanel__row: {
-    display: "flex",
-    alignItems: "center",
-    position: "relative",
-    height: "100%",
-  },
-  navPanel__categories: { flexShrink: 0 },
-  navPanel__links: {
+  categories: { flexShrink: 0 },
+  links: {
     marginLeft: "18px",
   },
-  navPanel__indicators: {
+  indicators: {
     marginLeft: "auto",
   },
 });
@@ -40,20 +24,20 @@ interface Props extends WithStyles<typeof styles> {}
 
 const NavPanel: React.FC<Props> = ({ classes }) => {
   return (
-    <div className={classes.navPanel__root}>
-      <div className={classes.navPanel__container}>
-        <div className={classes.navPanel__row}>
-          <div className={classes.navPanel__categories}>
+    <div className={classes.root}>
+      <Container style={{ height: "53px" }}>
+        <Grid container style={{ height: "100%" }} alignContent="center">
+          <div className={classes.categories}>
             <Categories></Categories>
           </div>
-          <div className={classes.navPanel__links}>
+          <div className={classes.links}>
             <NavLinks></NavLinks>
           </div>
-          <div className={classes.navPanel__indicators}>
+          <div className={classes.indicators}>
             <NavIndicators></NavIndicators>
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </div>
   );
 };

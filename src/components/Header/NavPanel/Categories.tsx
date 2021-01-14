@@ -2,17 +2,17 @@ import React from "react";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import categoryItems from "../../../constants/categoryItems";
-import Icons from "../../../assets/images/sprite.svg"
+import Icons from "../../../assets/images/sprite.svg";
 import { Icon } from "../../../helpers/getSprite";
 import MegaMenu from "./MegaMenu";
 const styles = createStyles({
-  categories__Root: {
+  Root: {
     width: "255px",
     height: "42px",
     color: "#fff",
     position: "relative",
   },
-  categories__body: {
+  body: {
     width: "100%",
     paddingTop: "42px",
     position: "absolute",
@@ -20,20 +20,26 @@ const styles = createStyles({
     boxShadow: "none",
     borderRadius: "2px",
   },
-  categories__bodyLinksWrapper: {
+  bodyLinksWrapper: {
     overflow: "visible",
     height: "auto",
     opacity: 1,
   },
-  categories__bodyLinks: {
+  bodyLinks: {
     position: "relative",
     listStyle: "none",
     padding: "0 0 14px",
     margin: "6px 0 0",
   },
-  categories__bodyLinksItem: {
+  bodyLinksItem: {
+    "&:hover > a": { background: "#525d66" },
+    "&:hover #megaMenu": { visibility: "visible" },
+
     listStyle: "none",
-    "& a": {
+    "& > a": {
+      // "&:hover": {
+      //   background: "#525d66",
+      // },
       textDecoration: "none", //global style
       backgroundColor: "transparent",
       fontWeight: 400,
@@ -52,7 +58,7 @@ const styles = createStyles({
       },
     },
   },
-  categories__button: {
+  button: {
     textAlign: "left",
     border: "none",
     background: "transparent",
@@ -66,13 +72,13 @@ const styles = createStyles({
     fontWeight: 500,
     padding: "0 32px 0 47px",
   },
-  categories__buttonIcon: {
+  buttonIcon: {
     position: "absolute",
     fill: "#859ba6",
     transition: "fill 0.2s, transform 0.2s",
   },
-  categories__buttonIconMenu: { left: "16px", top: "calc(50% - 7px)" },
-  categories__buttonIconArrow: {
+  buttonIconMenu: { left: "16px", top: "calc(50% - 7px)" },
+  buttonIconArrow: {
     transform: "rotate(180deg)",
     right: "13px",
     top: "calc(50% - 3px)",
@@ -83,15 +89,15 @@ interface Props extends WithStyles<typeof styles> {}
 
 const Categories: React.FC<Props> = ({ classes }) => {
   return (
-    <div className={classes.categories__Root}>
-      <div className={classes.categories__body}>
-        <div className={classes.categories__bodyLinksWrapper}>
-          <ul className={classes.categories__bodyLinks}>
-            {categoryItems.map((Item) => {
+    <div className={classes.Root}>
+      <div className={classes.body}>
+        <div className={classes.bodyLinksWrapper}>
+          <ul className={classes.bodyLinks}>
+            {categoryItems.map((item) => {
               return (
-                <li className={classes.categories__bodyLinksItem}>
+                <li className={classes.bodyLinksItem}>
                   <a href="/">
-                    {Item.name}
+                    {item.name}
                     <Icon
                       icons={Icons}
                       id="arrow-rounded-right-6x9"
@@ -99,23 +105,21 @@ const Categories: React.FC<Props> = ({ classes }) => {
                       height="9px"
                     ></Icon>
                   </a>
-                  <MegaMenu></MegaMenu>
+                  <MegaMenu
+                    subCategories={item.subCategories && item.subCategories}
+                  ></MegaMenu>
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-      <button className={classes.categories__button}>
-        <div
-          className={`${classes.categories__buttonIcon} ${classes.categories__buttonIconMenu}`}
-        >
+      <button className={classes.button}>
+        <div className={`${classes.buttonIcon} ${classes.buttonIconMenu}`}>
           <Icon icons={Icons} id="menu-18x14" width="18px" height="14px"></Icon>
         </div>
         Shop By Category
-        <div
-          className={`${classes.categories__buttonIcon} ${classes.categories__buttonIconArrow}`}
-        >
+        <div className={`${classes.buttonIcon} ${classes.buttonIconArrow}`}>
           <Icon
             icons={Icons}
             id="arrow-rounded-down-9x6"

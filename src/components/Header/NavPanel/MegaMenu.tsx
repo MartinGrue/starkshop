@@ -1,12 +1,15 @@
 import React from "react";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
+import { SubCategories } from "../../../constants/categoryItems";
 const styles = createStyles({
   container: {
+    width: "855px",
     position: "absolute",
     left: "100%",
     top: 0,
     height: "100%",
+    visibility: "hidden",
   },
   root: {
     background: "#fff",
@@ -23,8 +26,6 @@ const styles = createStyles({
   row: {
     display: "flex",
     flexWrap: "wrap",
-    marginRight: "-15px",
-    marginLeft: "-15px",
   },
   col: {
     flex: "0 0 100%",
@@ -34,15 +35,17 @@ const styles = createStyles({
     listStyle: "none",
     margin: 0,
     padding: 0,
-  },
-  listItem: {
-    padding: "1px 0",
-    "& a": {
+    "&  a": {
+      color: "inherit",
+      textDecoration: "none",
       fontWeight: 500,
     },
   },
+  listItem: {
+    padding: "1px 0",
+  },
   listItemWithSubMenu: {
-    "+ li": {
+    "& + li": {
       marginTop: "20px",
     },
   },
@@ -52,14 +55,23 @@ const styles = createStyles({
     paddingTop: "10px",
     marginTop: "3px",
     borderTop: "1px solid #e5e5e5",
+    "& a": {
+      textDecoration: "none",
+      fontSize: "14px",
+      color: "#5c6b73",
+      transition: "color 0.15s",
+    },
   },
 });
-interface Props extends WithStyles<typeof styles> {}
-
-const MegaMenu: React.FC<Props> = ({ classes }) => {
+interface Props extends WithStyles<typeof styles> {
+  subCategories?: SubCategories[];
+}
+const SetWidth = (subCategories: SubCategories[]) => {
+  // if()
+};
+const MegaMenu: React.FC<Props> = ({ classes, subCategories }) => {
   return (
-    <div className={classes.container}>
-      {" "}
+    <div className={classes.container} id="megaMenu">
       <div className={classes.root}>
         <div className={classes.row}>
           <div className={classes.col}>
@@ -90,16 +102,24 @@ const MegaMenu: React.FC<Props> = ({ classes }) => {
                 </ul>
               </li>
               <li>
-                <a href="#">Workbenches</a>
+                <a className={classes.listItem} href="#">
+                  Workbenches
+                </a>
               </li>
               <li>
-                <a href="#">Workbenches</a>
+                <a className={classes.listItem} href="#">
+                  Workbenches
+                </a>
               </li>
               <li>
-                <a href="#">Workbenches</a>
+                <a className={classes.listItem} href="#">
+                  Workbenches
+                </a>
               </li>
               <li>
-                <a href="#">Workbenches</a>
+                <a className={classes.listItem} href="#">
+                  Workbenches
+                </a>
               </li>
             </ul>
           </div>

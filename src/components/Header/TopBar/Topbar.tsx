@@ -1,30 +1,11 @@
 import React, { useState } from "react";
 import { withStyles, createStyles } from "@material-ui/styles";
-import { WithStyles } from "@material-ui/core";
-import Icons from "../../../assets/images/sprite.svg"
+import { Grid, WithStyles } from "@material-ui/core";
+import Icons from "../../../assets/images/sprite.svg";
 import { Icon } from "../../../helpers/getSprite";
-
+import Container from "@material-ui/core/Container";
 const styles = createStyles({
-  root: {
-    // boxSizing: "border-box",
-    // overflowY: "visible",
-    // height: "200vh",
-  },
-  container: {
-    maxWidth: "1140px",
-    height: "100%",
-    paddingRight: "15px",
-    paddingLeft: "15px",
-    marginRight: "auto",
-    marginLeft: "auto",
-  },
-  row: {
-    height: "100%",
-    display: "flex",
-    alignItems: "center",
-  },
   topbar: {
-    height: "32px",
     background: "#f7f7f7",
     boxShadow: "none",
     borderBottom: "none",
@@ -138,72 +119,71 @@ interface TopBarProps extends WithStyles<typeof styles> {}
 const Topbar: React.FC<TopBarProps> = ({ classes }) => {
   const [dropdownOpen, setdropdownOpen] = useState<boolean>(false);
   return (
-    <div className={classes.root}>
-      <div className={classes.topbar}>
-        <div className={classes.container}>
-          <div className={classes.row}>
-            <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
-              <a style={{ textDecoration: "none" }} href={"www.google.de"}>
-                About Us
-              </a>
-            </div>
-            <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
-              <a style={{ textDecoration: "none" }} href={"www.google.de"}>
-                Contacts
-              </a>
-            </div>
-            <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
-              <a style={{ textDecoration: "none" }} href={"www.google.de"}>
-                Store Location
-              </a>
-            </div>
-            <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
-              <a style={{ textDecoration: "none" }} href={"www.google.de"}>
-                Track Order
-              </a>
-            </div>
-            <div className={classes.topbarPadding}></div>
-            <div className={classes.topbarItem}>
-              <div className={classes.topbarItem__dropdown}>
-                <button
-                  className={classes.topbarItem__dropdown_btn}
-                  onClick={() => {
-                    setdropdownOpen(!dropdownOpen);
-                  }}
-                >
-                  My Account
-                  <Icon
-                    icons={Icons}
-                    id="arrow-rounded-down-7x5"
-                    width="7px"
-                    height="5px"
-                  ></Icon>
-                </button>
-                <div
-                  className={`${classes.topbarItem__dropdown_body} ${
-                    dropdownOpen && classes.topbarItem__dropdow_opened
-                  }`}
-                >
-                  <ul className={`${classes.menu} ${classes.topbar_menu}`}>
-                    <li>
-                      <a href="account.html">Login</a>
-                    </li>
-                    <li>
-                      <a href="account.html">Register</a>
-                    </li>
-                    <li>
-                      <a href="#">Orders</a>
-                    </li>
-                    <li>
-                      <a href="#">Addresses</a>
-                    </li>
-                  </ul>
-                </div>
+    <div className={classes.topbar}>
+      <Container style={{ height: "32px" }}>
+        <Grid container style={{ height: "100%" }} alignContent="center">
+          <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
+            <a style={{ textDecoration: "none" }} href={"www.google.de"}>
+              About Us
+            </a>
+          </div>
+          <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
+            <a style={{ textDecoration: "none" }} href={"www.google.de"}>
+              Contacts
+            </a>
+          </div>
+          <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
+            <a style={{ textDecoration: "none" }} href={"www.google.de"}>
+              Store Location
+            </a>
+          </div>
+          <div className={`${classes.topbarItem} ${classes.topbarItemLink}`}>
+            <a style={{ textDecoration: "none" }} href={"www.google.de"}>
+              Track Order
+            </a>
+          </div>
+          <div className={classes.topbarPadding}></div>
+          <div className={classes.topbarItem}>
+            <div className={classes.topbarItem__dropdown}>
+              <button
+                className={classes.topbarItem__dropdown_btn}
+                onClick={() => {
+                  setdropdownOpen(!dropdownOpen);
+                }}
+              >
+                My Account
+                <Icon
+                  icons={Icons}
+                  id="arrow-rounded-down-7x5"
+                  width="7px"
+                  height="5px"
+                ></Icon>
+              </button>
+              <div
+                className={`${classes.topbarItem__dropdown_body} ${
+                  dropdownOpen && classes.topbarItem__dropdow_opened
+                }`}
+              >
+                <ul className={`${classes.menu} ${classes.topbar_menu}`}>
+                  <li>
+                    <a href="account.html">Login</a>
+                  </li>
+                  <li>
+                    <a href="account.html">Register</a>
+                  </li>
+                  <li>
+                    <a href="#">Orders</a>
+                  </li>
+                  <li>
+                    <a href="#">Addresses</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Container>
+      {/* </div> */}
     </div>
   );
 };
